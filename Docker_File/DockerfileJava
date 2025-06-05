@@ -1,0 +1,14 @@
+# Pull official base image of JAVA
+FROM openjdk:17-jdk-alpine
+
+# Create folder to store application
+WORKDIR /app
+
+# Copy the application path 
+COPY src/Main.java /app/Main.java
+
+#Compile the source code 
+RUN javac Main.java
+
+#Run the Command
+CMD ["java","Main"]
